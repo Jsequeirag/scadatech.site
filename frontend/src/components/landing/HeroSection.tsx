@@ -90,7 +90,7 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-brand-electric/20 rounded-3xl blur-2xl scale-110" />
 
               <img
-                src="/assets/image.png"
+                src="/assets/skyfox.png"
                 alt="SkyFox Web Server — plataforma cloud para desarrollo de aplicaciones web"
                 className="relative z-10 w-full max-w-md rounded-2xl drop-shadow-2xl"
               />
