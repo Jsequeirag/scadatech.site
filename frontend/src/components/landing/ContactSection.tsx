@@ -1,24 +1,27 @@
 import { useState } from 'react'
-import { MapPin, Mail, Phone, Send, CheckCircle2 } from 'lucide-react'
+import { Mail, Phone, Send, CheckCircle2, MessageCircle } from 'lucide-react'
 
 const contactInfo = [
   {
-    icon:  MapPin,
-    label: 'Dirección',
-    value: 'Quilín 4745, Macul, Santiago, Chile',
-    href:  'https://maps.google.com/?q=Quilín+4745+Macul+Santiago+Chile',
-  },
-  {
     icon:  Mail,
-    label: 'Correo',
-    value: 'comercial@scadatech.cl',
-    href:  'mailto:comercial@scadatech.cl',
+    label: 'Correo electrónico',
+    value: 'scadatech@hotmail.com',
+    href:  'mailto:scadatech@hotmail.com',
+    desc:  'Respuesta en horario laboral',
   },
   {
     icon:  Phone,
-    label: 'Teléfono',
-    value: '+56 9 5412 4704',
-    href:  'tel:+56954124704',
+    label: 'Teléfono / WhatsApp',
+    value: '(+506) 7039-6600',
+    href:  'https://wa.me/50670396600',
+    desc:  'Escríbenos por WhatsApp',
+  },
+  {
+    icon:  MessageCircle,
+    label: 'WhatsApp directo',
+    value: 'Enviar mensaje ahora',
+    href:  'https://wa.me/50670396600?text=Hola%20ScadaTech%2C%20me%20interesa%20conocer%20más%20sobre%20SkyFox',
+    desc:  'Atención rápida por chat',
   },
 ]
 
@@ -35,7 +38,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contacto" className="bg-surface-soft py-20 lg:py-28">
+    <section id="contacto" className="bg-white py-20 lg:py-28">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3">
@@ -43,25 +46,25 @@ export default function ContactSection() {
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-text mb-4">
             Hablemos sobre{' '}
-            <span className="text-brand-electric">su proyecto</span>
+            <span className="text-brand-electric">tu proyecto</span>
           </h2>
           <p className="text-muted leading-relaxed">
-            Nuestro equipo está disponible para responder sus consultas y presentar
-            la solución que mejor se adapte a sus requerimientos.
+            ¿Tienes dudas sobre qué plan elegir o cómo implementar tu solución?
+            Contáctanos — te asesoramos sin compromiso.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
 
           {/* Left: Contact info */}
-          <div className="space-y-6">
-            {contactInfo.map(({ icon: Icon, label, value, href }) => (
+          <div className="space-y-4">
+            {contactInfo.map(({ icon: Icon, label, value, href, desc }) => (
               <a
                 key={label}
                 href={href}
-                target={href.startsWith('http') ? '_blank' : undefined}
-                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-border hover:border-brand-electric/40 hover:shadow-card transition-all duration-200 group"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 p-5 rounded-2xl bg-surface-soft border border-border hover:border-brand-electric/40 hover:shadow-card transition-all duration-200 group"
               >
                 <div className="w-11 h-11 rounded-xl bg-brand-electric/10 flex items-center justify-center shrink-0">
                   <Icon size={20} className="text-brand-electric" />
@@ -73,25 +76,39 @@ export default function ContactSection() {
                   <p className="text-sm font-medium text-text group-hover:text-brand-electric transition-colors">
                     {value}
                   </p>
+                  <p className="text-xs text-muted mt-0.5">{desc}</p>
                 </div>
               </a>
             ))}
 
+            {/* WhatsApp CTA destacado */}
+            <a
+              href="https://wa.me/50670396600?text=Hola%20ScadaTech%2C%20me%20interesa%20saber%20más%20sobre%20SkyFox"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 w-full p-4 rounded-2xl bg-green-500 hover:bg-green-600 text-white font-semibold text-sm transition-all duration-150 active:scale-95 shadow-lg"
+            >
+              <MessageCircle size={20} />
+              Contactar por WhatsApp
+            </a>
+
             <div className="p-6 rounded-2xl bg-brand-dark text-white">
-              <p className="font-semibold mb-2">Horario de atención</p>
-              <p className="text-sm text-text-light">Lunes a Viernes: 09:00 – 18:00 hrs</p>
-              <p className="text-sm text-text-light">Soporte 24/7 para clientes activos</p>
+              <p className="font-semibold mb-2">Impulsa tu Proyecto Web</p>
+              <p className="text-sm text-text-light">
+                Con ScadaTech puedes crear, lanzar y crecer tu aplicación web desde cero,
+                sin necesidad de infraestructura compleja ni grandes inversiones.
+              </p>
             </div>
           </div>
 
           {/* Right: Contact form */}
-          <div className="bg-white border border-border rounded-2xl p-6 lg:p-8 shadow-card">
+          <div className="bg-surface-soft border border-border rounded-2xl p-6 lg:p-8 shadow-card">
             {sent ? (
               <div className="flex flex-col items-center justify-center h-full gap-4 py-12 text-center">
                 <CheckCircle2 size={48} className="text-green-500" />
                 <h3 className="text-xl font-bold text-text">¡Mensaje enviado!</h3>
                 <p className="text-muted text-sm max-w-xs">
-                  Gracias por contactarnos. Nuestro equipo le responderá a la brevedad.
+                  Gracias por contactarnos. Le responderemos a la brevedad posible.
                 </p>
                 <button
                   onClick={() => { setSent(false); setForm({ name: '', company: '', email: '', message: '' }) }}
@@ -115,7 +132,7 @@ export default function ContactSection() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Su nombre"
-                      className="w-full px-4 py-2.5 text-sm border border-border rounded-lg bg-surface-soft focus:outline-none focus:ring-2 focus:ring-brand-electric/30 focus:border-brand-electric transition-all"
+                      className="w-full px-4 py-2.5 text-sm border border-border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-electric/30 focus:border-brand-electric transition-all"
                     />
                   </div>
                   <div>
@@ -128,8 +145,8 @@ export default function ContactSection() {
                       type="text"
                       value={form.company}
                       onChange={handleChange}
-                      placeholder="Su empresa"
-                      className="w-full px-4 py-2.5 text-sm border border-border rounded-lg bg-surface-soft focus:outline-none focus:ring-2 focus:ring-brand-electric/30 focus:border-brand-electric transition-all"
+                      placeholder="Su empresa (opcional)"
+                      className="w-full px-4 py-2.5 text-sm border border-border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-electric/30 focus:border-brand-electric transition-all"
                     />
                   </div>
                 </div>
@@ -146,7 +163,7 @@ export default function ContactSection() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="correo@empresa.com"
-                    className="w-full px-4 py-2.5 text-sm border border-border rounded-lg bg-surface-soft focus:outline-none focus:ring-2 focus:ring-brand-electric/30 focus:border-brand-electric transition-all"
+                    className="w-full px-4 py-2.5 text-sm border border-border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-electric/30 focus:border-brand-electric transition-all"
                   />
                 </div>
 
@@ -161,8 +178,8 @@ export default function ContactSection() {
                     rows={5}
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Cuéntenos sobre su proyecto o consulta..."
-                    className="w-full px-4 py-2.5 text-sm border border-border rounded-lg bg-surface-soft focus:outline-none focus:ring-2 focus:ring-brand-electric/30 focus:border-brand-electric transition-all resize-none"
+                    placeholder="Cuéntanos sobre tu proyecto, qué plan te interesa o cualquier consulta..."
+                    className="w-full px-4 py-2.5 text-sm border border-border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand-electric/30 focus:border-brand-electric transition-all resize-none"
                   />
                 </div>
 

@@ -1,33 +1,33 @@
-import { CheckCircle2, Award, Users, Globe } from 'lucide-react'
+import { CheckCircle2, Cloud, Code2, Users } from 'lucide-react'
 
 const highlights = [
-  'Fundada en 2010 con foco en automatización eléctrica',
-  'Equipo de ingenieros certificados en sistemas SCADA',
-  'Socios tecnológicos: GE, Eaton, PCVue, Siemens, ABB',
-  'Experiencia en proyectos de alta y media tensión',
-  'Cumplimiento de estándares IEC 61850 y DNP3',
-  'Operamos a nivel nacional e internacional',
+  'Plataforma 100% en la nube — sin instalaciones locales',
+  'Programación procedural orientada a objetos (propiedades y eventos)',
+  'Ideal para principiantes con conocimientos básicos en programación',
+  'Compatible con base de datos Microsoft Access y más',
+  'Acceso simultáneo multi-usuario desde cualquier dispositivo',
+  'Formularios y código siempre disponibles desde tu cuenta',
 ]
 
 const values = [
   {
-    icon:  Award,
-    title: 'Excelencia técnica',
-    desc:  'Ingenieros especializados con experiencia en sistemas eléctricos críticos.',
+    icon:  Cloud,
+    title: 'Sin complicaciones',
+    desc:  'Olvídate de instalaciones. Accede a todo con un link desde cualquier computadora o móvil.',
     color: 'text-brand-cyan',
     bg:    'bg-brand-cyan/10',
   },
   {
-    icon:  Users,
-    title: 'Enfoque en el cliente',
-    desc:  'Soluciones a medida adaptadas a los requerimientos de cada organización.',
+    icon:  Code2,
+    title: 'Lenguaje familiar',
+    desc:  'Programación con un lenguaje popular y familiar, orientado a objetos con propiedades y eventos.',
     color: 'text-brand-electric',
     bg:    'bg-brand-electric/10',
   },
   {
-    icon:  Globe,
-    title: 'Proyección regional',
-    desc:  'Experiencia en proyectos a lo largo de Chile y Latinoamérica.',
+    icon:  Users,
+    title: 'Multi-usuario',
+    desc:  'Tus usuarios trabajan juntos en una única base de datos centralizada desde cualquier lugar.',
     color: 'text-amber',
     bg:    'bg-amber/10',
   },
@@ -35,29 +35,30 @@ const values = [
 
 export default function AboutSection() {
   return (
-    <section id="nosotros" className="bg-white py-20 lg:py-28">
+    <section id="nosotros" className="bg-surface-soft py-20 lg:py-28">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left: Text */}
           <div>
             <p className="text-xs font-bold text-brand-electric uppercase tracking-widest mb-3">
-              Quiénes Somos
+              ¿Quiénes somos?
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold text-text mb-6 leading-tight">
-              Más de 15 años liderando la{' '}
-              <span className="text-brand-electric">automatización eléctrica</span>
+              ScadaTech: la manera más{' '}
+              <span className="text-brand-electric">rápida y fácil</span>{' '}
+              de llevar tu proyecto a la web
             </h2>
-            <p className="text-muted leading-relaxed mb-6">
-              SCADATECH es una empresa chilena fundada en 2010, especializada en ingeniería
-              y servicios para la automatización de sistemas eléctricos de potencia. Nuestro
-              propósito es proveer soluciones integrales que contribuyan a la confiabilidad,
-              seguridad y eficiencia de la infraestructura energética.
+            <p className="text-muted leading-relaxed mb-5">
+              ¿Necesitas llevar tu proyecto a la nube por el camino más fácil, sin enredos
+              ni jeroglíficos? Llegaste al lugar indicado. En ScadaTech desarrollamos
+              <strong className="text-text"> SkyFox Web Server</strong>, una plataforma que te
+              permite crear tus propias aplicaciones web ejecutables desde el navegador de
+              cualquier dispositivo.
             </p>
             <p className="text-muted leading-relaxed mb-8">
-              Trabajamos con las principales empresas de generación, transmisión y distribución
-              eléctrica del país, aportando tecnología de punta y el respaldo de los fabricantes
-              líderes a nivel mundial.
+              Diseñado para personas con conocimientos básicos en programación que desean
+              escalar y brindar soluciones integrales en la nube, sin necesidad de ser
+              expertos ni depender de infraestructura costosa.
             </p>
 
             <ul className="space-y-3">
@@ -70,12 +71,11 @@ export default function AboutSection() {
             </ul>
           </div>
 
-          {/* Right: Value cards */}
           <div className="space-y-4">
             {values.map(({ icon: Icon, title, desc, color, bg }) => (
               <div
                 key={title}
-                className="flex items-start gap-5 p-6 rounded-2xl bg-surface-soft border border-border hover:shadow-card transition-shadow duration-200"
+                className="flex items-start gap-5 p-6 rounded-2xl bg-white border border-border hover:shadow-card transition-shadow duration-200"
               >
                 <div className={`w-12 h-12 rounded-xl ${bg} flex items-center justify-center shrink-0`}>
                   <Icon size={22} className={color} />
@@ -87,11 +87,13 @@ export default function AboutSection() {
               </div>
             ))}
 
-            {/* Highlight box */}
             <div className="p-6 rounded-2xl bg-brand-dark text-white">
-              <p className="text-sm text-text-light mb-2">Sede central</p>
-              <p className="font-semibold">Santiago, Chile</p>
-              <p className="text-sm text-text-light mt-1">Quilín 4745, Macul</p>
+              <p className="font-semibold mb-1">¿No has podido ofrecer soluciones web?</p>
+              <p className="text-sm text-text-light">
+                Estás buscando la manera más rápida y fácil de desarrollar aplicaciones
+                web empresariales con las que se pueda interactuar desde teléfonos y tablets.
+                SkyFox es la respuesta.
+              </p>
             </div>
           </div>
         </div>

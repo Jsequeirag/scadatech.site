@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X, Code2 } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Inicio',    href: '#inicio' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Nosotros',  href: '#nosotros' },
-  { label: 'Clientes',  href: '#clientes' },
-  { label: 'Contacto',  href: '#contacto' },
+  { label: 'Inicio',        href: '#inicio' },
+  { label: 'Cómo funciona', href: '#como-funciona' },
+  { label: 'Productos',     href: '#productos' },
+  { label: 'Planes',        href: '#planes' },
+  { label: 'Sectores',      href: '#sectores' },
+  { label: 'Nosotros',      href: '#nosotros' },
 ]
 
 export default function Navbar() {
-  const [open, setOpen]       = useState(false)
+  const [open, setOpen]         = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -41,13 +42,13 @@ export default function Navbar() {
             href="#inicio"
             onClick={(e) => handleLink(e, '#inicio')}
             className="flex items-center gap-2 group"
-            aria-label="SCADATECH — ir al inicio"
+            aria-label="ScadaTech — ir al inicio"
           >
             <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-electric/20 border border-brand-electric/40 group-hover:bg-brand-electric/30 transition-colors">
-              <Zap size={18} className="text-brand-cyan" />
+              <Code2 size={18} className="text-brand-cyan" />
             </div>
             <span className="text-xl font-bold text-white tracking-tight">
-              SCADA<span className="text-brand-cyan">TECH</span>
+              Scada<span className="text-brand-cyan">Tech</span>
             </span>
           </a>
 
@@ -57,17 +58,17 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLink(e, link.href)}
-                className="px-4 py-2 text-sm font-medium text-text-light hover:text-white rounded-lg hover:bg-white/10 transition-all duration-150"
+                className="px-3 py-2 text-sm font-medium text-text-light hover:text-white rounded-lg hover:bg-white/10 transition-all duration-150"
               >
                 {link.label}
               </a>
             ))}
             <a
-              href="#contacto"
-              onClick={(e) => handleLink(e, '#contacto')}
-              className="ml-4 px-5 py-2 text-sm font-semibold text-white bg-brand-electric hover:bg-primary-hover rounded-lg transition-all duration-150 active:scale-95 shadow-glow-blue"
+              href="#planes"
+              onClick={(e) => handleLink(e, '#planes')}
+              className="ml-3 px-5 py-2 text-sm font-semibold text-white bg-brand-electric hover:bg-primary-hover rounded-lg transition-all duration-150 active:scale-95 shadow-glow-blue"
             >
-              Contáctenos
+              Empezar gratis
             </a>
           </nav>
 
@@ -96,11 +97,11 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contacto"
-              onClick={(e) => handleLink(e, '#contacto')}
+              href="#planes"
+              onClick={(e) => handleLink(e, '#planes')}
               className="mt-2 px-4 py-3 text-sm font-semibold text-white text-center bg-brand-electric hover:bg-primary-hover rounded-lg transition-colors active:scale-95"
             >
-              Contáctenos
+              Empezar gratis
             </a>
           </nav>
         </div>

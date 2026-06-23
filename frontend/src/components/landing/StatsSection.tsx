@@ -1,35 +1,35 @@
-import { Calendar, FolderKanban, Building2, Clock } from 'lucide-react'
+import { Users, Globe, Zap, Smile } from 'lucide-react'
 
 const stats = [
   {
-    icon:  Calendar,
-    value: '+15',
-    unit:  'años',
-    label: 'de experiencia en el sector eléctrico',
+    icon:  Globe,
+    value: '100%',
+    unit:  '',
+    label: 'en la nube — accede desde cualquier dispositivo',
     color: 'text-brand-cyan',
     bg:    'bg-brand-cyan/10',
   },
   {
-    icon:  FolderKanban,
-    value: '+50',
-    unit:  'proyectos',
-    label: 'implementados en Chile y Latinoamérica',
+    icon:  Users,
+    value: 'Hasta 20',
+    unit:  '',
+    label: 'usuarios concurrentes en tu aplicación',
     color: 'text-brand-electric',
     bg:    'bg-brand-electric/10',
   },
   {
-    icon:  Building2,
-    value: '10+',
-    unit:  'clientes',
-    label: 'grandes empresas energéticas',
+    icon:  Zap,
+    value: '0',
+    unit:  '',
+    label: 'instalaciones necesarias — solo un navegador',
     color: 'text-amber',
     bg:    'bg-amber/10',
   },
   {
-    icon:  Clock,
-    value: '24/7',
+    icon:  Smile,
+    value: 'Fácil',
     unit:  '',
-    label: 'soporte y monitoreo continuo',
+    label: 'para principiantes con conocimientos básicos',
     color: 'text-green-400',
     bg:    'bg-green-400/10',
   },
@@ -46,11 +46,11 @@ export default function StatsSection() {
                 <Icon size={22} className={color} />
               </div>
               <div>
-                <p className="text-3xl font-bold text-white">
+                <p className="text-2xl font-bold text-white">
                   {value}
-                  {unit && <span className="text-lg font-medium text-text-light ml-1">{unit}</span>}
+                  {unit && <span className="text-base font-medium text-text-light ml-1">{unit}</span>}
                 </p>
-                <p className="text-sm text-text-light mt-1 leading-snug">{label}</p>
+                <p className="text-xs text-text-light mt-1 leading-snug">{label}</p>
               </div>
             </div>
           ))}
