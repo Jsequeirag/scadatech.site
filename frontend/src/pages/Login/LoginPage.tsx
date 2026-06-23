@@ -40,12 +40,13 @@ export default function LoginPage() {
           className="flex items-center gap-2 group"
           aria-label="Volver al inicio"
         >
-          <img
-            src={asset('assets/logo.png')}
-            alt="ScadaTech logo"
-            className="h-14 w-auto object-contain group-hover:opacity-90 transition-opacity"
-            style={{ mixBlendMode: 'screen' }}
-          />
+          <div className="bg-white rounded-2xl shadow-lg shadow-black/40 px-4 py-2">
+            <img
+              src={asset('assets/logo.png')}
+              alt="ScadaTech logo"
+              className="h-12 w-auto object-contain group-hover:opacity-90 transition-opacity"
+            />
+          </div>
         </a>
 
         <button
