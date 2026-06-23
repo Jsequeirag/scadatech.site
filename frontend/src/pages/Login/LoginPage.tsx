@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Code2, Eye, EyeOff, ArrowLeft, Loader2 } from 'lucide-react'
+import { Eye, EyeOff, ArrowLeft, Loader2 } from 'lucide-react'
 
 export default function LoginPage() {
   const navigate   = useNavigate()
@@ -39,12 +39,11 @@ export default function LoginPage() {
           className="flex items-center gap-2 group"
           aria-label="Volver al inicio"
         >
-          <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-electric/20 border border-brand-electric/40 group-hover:bg-brand-electric/30 transition-colors">
-            <Code2 size={18} className="text-brand-cyan" />
-          </div>
-          <span className="text-xl font-bold text-white tracking-tight">
-            Scada<span className="text-brand-cyan">Tech</span>
-          </span>
+          <img
+            src="/assets/logo.png"
+            alt="ScadaTech logo"
+            className="h-10 w-auto object-contain brightness-0 invert group-hover:opacity-90 transition-opacity"
+          />
         </a>
 
         <button

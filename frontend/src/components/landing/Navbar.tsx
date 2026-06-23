@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Menu, X, Code2 } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'Inicio',        href: '#inicio' },
@@ -43,15 +43,14 @@ export default function Navbar() {
           <a
             href="#inicio"
             onClick={(e) => handleLink(e, '#inicio')}
-            className="flex items-center gap-2 group"
+            className="flex items-center group"
             aria-label="ScadaTech — ir al inicio"
           >
-            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-electric/20 border border-brand-electric/40 group-hover:bg-brand-electric/30 transition-colors">
-              <Code2 size={18} className="text-brand-cyan" />
-            </div>
-            <span className="text-xl font-bold text-white tracking-tight">
-              Scada<span className="text-brand-cyan">Tech</span>
-            </span>
+            <img
+              src="/assets/logo.png"
+              alt="ScadaTech logo"
+              className="h-10 w-auto object-contain brightness-0 invert group-hover:opacity-90 transition-opacity"
+            />
           </a>
 
           <nav aria-label="Navegación principal" className="hidden lg:flex items-center gap-1">
