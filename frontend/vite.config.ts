@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/www.scadatech.site/',
+  base: '/scadatech.site/',
   resolve: {
     alias: {
       '@': '/src',
