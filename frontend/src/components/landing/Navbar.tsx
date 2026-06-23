@@ -38,7 +38,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className="flex items-center justify-between h-16 lg:h-20">
 
           <a
             href="#inicio"
@@ -49,7 +49,7 @@ export default function Navbar() {
             <img
               src={asset('assets/logo.png')}
               alt="ScadaTech logo"
-              className="h-12 lg:h-14 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200"
+              className="h-10 lg:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200"
             />
           </a>
 
@@ -59,21 +59,21 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLink(e, link.href)}
-                className="px-3 py-2 text-sm font-medium text-text-light hover:text-white rounded-lg hover:bg-white/10 transition-all duration-150"
+                className="px-3 py-1.5 text-sm font-medium text-text-light hover:text-white rounded-lg hover:bg-white/10 transition-all duration-150"
               >
                 {link.label}
               </a>
             ))}
             <button
               onClick={() => navigate('/login')}
-              className="ml-2 px-4 py-2 text-sm font-medium text-text-light border border-border-dark hover:border-brand-cyan/50 hover:text-white rounded-lg transition-all duration-150 active:scale-95 hover:bg-white/5"
+              className="ml-2 px-4 py-1.5 text-sm font-medium text-text-light border border-border-dark hover:border-brand-cyan/50 hover:text-white rounded-lg transition-all duration-150 active:scale-95 hover:bg-white/5"
             >
               Accede a tu cuenta
             </button>
             <a
               href="#planes"
               onClick={(e) => handleLink(e, '#planes')}
-              className="ml-1 px-5 py-2 text-sm font-semibold text-white bg-brand-electric hover:bg-primary-hover rounded-lg transition-all duration-150 active:scale-95 shadow-glow-blue"
+              className="ml-1 px-5 py-1.5 text-sm font-semibold text-white bg-brand-electric hover:bg-primary-hover rounded-lg transition-all duration-150 active:scale-95 shadow-glow-blue"
             >
               Empezar gratis
             </a>
