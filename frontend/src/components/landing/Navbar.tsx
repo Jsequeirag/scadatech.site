@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Menu, X, Code2 } from 'lucide-react'
 
 const navLinks = [
@@ -11,6 +12,7 @@ const navLinks = [
 ]
 
 export default function Navbar() {
+  const navigate                = useNavigate()
   const [open, setOpen]         = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -63,12 +65,12 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#"
+            <button
+              onClick={() => navigate('/login')}
               className="ml-2 px-4 py-2 text-sm font-medium text-text-light border border-border-dark hover:border-brand-cyan/50 hover:text-white rounded-lg transition-all duration-150 active:scale-95 hover:bg-white/5"
             >
               Accede a tu cuenta
-            </a>
+            </button>
             <a
               href="#planes"
               onClick={(e) => handleLink(e, '#planes')}
@@ -102,12 +104,12 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#"
-              className="px-4 py-3 text-sm font-medium text-text-light border border-border-dark hover:border-brand-cyan/50 hover:text-white text-center rounded-lg transition-colors"
+            <button
+              onClick={() => { setOpen(false); navigate('/login') }}
+              className="px-4 py-3 text-sm font-medium text-text-light border border-border-dark hover:border-brand-cyan/50 hover:text-white text-center rounded-lg transition-colors w-full"
             >
               Accede a tu cuenta
-            </a>
+            </button>
             <a
               href="#planes"
               onClick={(e) => handleLink(e, '#planes')}

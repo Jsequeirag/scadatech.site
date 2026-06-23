@@ -2,7 +2,8 @@ import { Suspense, lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import MainLayout from '@/components/layout/MainLayout'
 
-const Home = lazy(() => import('@/pages/Home/Home'))
+const Home      = lazy(() => import('@/pages/Home/Home'))
+const LoginPage = lazy(() => import('@/pages/Login/LoginPage'))
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-brand-dark">
@@ -20,6 +21,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoader />}>
             <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'login',
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <LoginPage />
           </Suspense>
         ),
       },
